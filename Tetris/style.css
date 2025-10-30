@@ -1,0 +1,333 @@
+    :root {
+        --bg: #0f1117;
+        --panel: #0b0c10;
+        --neon-cyan: #8be9fd;
+        --neon-pink: #ff79c6;
+        --neon-purple: #bd93f9;
+        --neon-green: #50fa7b;
+        --muted: #94a3b8;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        background: radial-gradient(1200px 600px at 10% 10%, rgba(139, 233, 253, 0.04), transparent), radial-gradient(900px 450px at 90% 90%, rgba(189, 147, 249, 0.03), transparent), var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial
+    }
+
+    .wrap {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px
+    }
+
+    .game {
+        display: grid;
+        grid-template-columns: 320px 220px;
+        gap: 20px;
+        align-items: start;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+        transform: translateZ(0);
+    }
+
+    .board-wrap {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    canvas {
+        display: block;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6));
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+        image-rendering: pixelated
+    }
+
+    .panel {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 14px;
+        border-radius: 12px;
+        color: var(--neon-cyan);
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    h1 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        color: var(--neon-pink);
+        letter-spacing: 1px
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 8px
+    }
+
+    .stat {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center
+    }
+
+    .stat small {
+        display: block;
+        color: var(--muted);
+        font-size: 12px
+    }
+
+    .controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 12px
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: var(--neon-cyan);
+        cursor: pointer;
+        font-weight: 600
+    }
+
+    .btn-danger {
+        color: var(--neon-pink);
+        border-color: rgba(255, 121, 198, 0.12)
+    }
+
+    .touch-controls {
+        display: none;
+        margin-top: 14px
+    }
+
+    .touch-row {
+        display: flex;
+        gap: 8px;
+        justify-content: center
+    }
+
+    .touch-btn {
+        min-width: 64px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        font-weight: 700
+    }
+
+    .footer {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 10px
+    }
+
+    /* Neon accents on blocks via canvas drawing, but we add glow on the right panel */
+    .panel .glow {
+        box-shadow: 0 10px 30px rgba(139, 233, 253, 0.06) inset, 0 6px 18px rgba(189, 147, 249, 0.04)
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width:760px) {
+        .game {
+            grid-template-columns: 1fr;
+            max-width: 420px;
+            width: 100%
+        }
+
+        .touch-controls {
+            display: block
+        }
+
+        .panel {
+            order: 2
+        }
+
+        .board-wrap {
+            order: 1
+        }
+    }
+
+    :root {
+        --bg: #0f1117;
+        --panel: #0b0c10;
+        --neon-cyan: #8be9fd;
+        --neon-pink: #ff79c6;
+        --neon-purple: #bd93f9;
+        --neon-green: #50fa7b;
+        --muted: #94a3b8;
+    }
+
+    * {
+        box-sizing: border-box
+    }
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        background: radial-gradient(1200px 600px at 10% 10%, rgba(139, 233, 253, 0.04), transparent), radial-gradient(900px 450px at 90% 90%, rgba(189, 147, 249, 0.03), transparent), var(--bg);
+        font-family: Inter, ui-sans-serif, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial
+    }
+
+    .wrap {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px
+    }
+
+    .game {
+        display: grid;
+        grid-template-columns: 320px 220px;
+        gap: 20px;
+        align-items: start;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(2, 6, 23, 0.6);
+        transform: translateZ(0);
+    }
+
+    .board-wrap {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    canvas {
+        display: block;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.6));
+        border-radius: 8px;
+        width: 100%;
+        height: auto;
+        image-rendering: pixelated
+    }
+
+    .panel {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        padding: 14px;
+        border-radius: 12px;
+        color: var(--neon-cyan);
+        border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    h1 {
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        color: var(--neon-pink);
+        letter-spacing: 1px
+    }
+
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 8px
+    }
+
+    .stat {
+        background: rgba(255, 255, 255, 0.02);
+        padding: 10px;
+        border-radius: 8px;
+        text-align: center
+    }
+
+    .stat small {
+        display: block;
+        color: var(--muted);
+        font-size: 12px
+    }
+
+    .controls {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 12px
+    }
+
+    button {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 8px 10px;
+        border-radius: 8px;
+        color: var(--neon-cyan);
+        cursor: pointer;
+        font-weight: 600
+    }
+
+    .btn-danger {
+        color: var(--neon-pink);
+        border-color: rgba(255, 121, 198, 0.12)
+    }
+
+    .touch-controls {
+        display: none;
+        margin-top: 14px
+    }
+
+    .touch-row {
+        display: flex;
+        gap: 8px;
+        justify-content: center
+    }
+
+    .touch-btn {
+        min-width: 64px;
+        padding: 12px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+        font-weight: 700
+    }
+
+    .footer {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 10px
+    }
+
+    /* Neon accents on blocks via canvas drawing, but we add glow on the right panel */
+    .panel .glow {
+        box-shadow: 0 10px 30px rgba(139, 233, 253, 0.06) inset, 0 6px 18px rgba(189, 147, 249, 0.04)
+    }
+
+    /* Responsive: stack on small screens */
+    @media (max-width:760px) {
+        .game {
+            grid-template-columns: 1fr;
+            max-width: 420px;
+            width: 100%
+        }
+
+        .touch-controls {
+            display: block
+        }
+
+        .panel {
+            order: 2
+        }
+
+        .board-wrap {
+            order: 1
+        }
+    }

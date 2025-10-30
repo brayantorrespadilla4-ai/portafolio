@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>calculadora</title>
+    <link rel="stylesheet" href="style.css"
+</head>
+
+<body>
+    <div class="calc" role="application" aria-label="Calculadora">
+        <div class="display">
+            <div class="history" id="history" aria-live="polite"></div>
+            <div class="result" id="result" aria-live="polite">0</div>
+        </div>
+        <div class="keys" id="keys" aria-label="Teclas de la calculadora">
+
+            <!--fila 1-->
+            <button class="key" data-action="clear" data-type="danger" aria-label="Borrar todo">AC</button>
+            <button class="key" data-action="backspace" data-type="sec" aria-label="Borrar ùltimo">⌫</button>
+            <button class="key" data-action="percent" data-type="sec" aria-label="Porcentaje">%</button>
+            <button class="key" data-action="op" data-op="/" data-type="op" aria-label="Dividir">÷</button>
+
+            <!--fila 2-->
+            <button class="key" data-num>7</button>
+            <button class="key" data-num>8</button>
+            <button class="key" data-num>9</button>
+            <button class="key" data-action="op" data-op="*" data-type="op" data-label="Multiplicar">x</button>
+
+            <!--fila 3-->
+            <button class="key" data-num>4</button>
+            <button class="key" data-num>5</button>
+            <button class="key" data-num>6</button>
+            <button class="key" data-action="op" data-op="-" data-type="op" data-label="Restar">-</button>
+            
+            <!-- fila 4-->
+            <button class="key" data-num>1</button>
+            <button class="key" data-num>2</button>
+            <button class="key" data-num>3</button>
+            <button class="key" data-action="op" data-op="+" data-type="op" data-label="Sumar">+</button>
+
+            <!-- fila 5 -->
+            <button class="key span-2" data-num>0</button>
+            <button class="key" data-action="dot" aria-label="Decimal">.</button>
+            <button class="key" data-action="equals" data-type="eq" aria-label="Igual">=</button>
+
+            <!-- fila extra -->
+             <button class="key span-2" data-action="negate" data-type="sec" aria-labe="Cambiar signo">±</button>
+             <button class="key span-2" data-action="copy" data-type="sec" aria-label="Copiar resultado">copiar</button>
+        </div>
+    </div>
+    <script src="code.js"></script>
+</body>
+</html> 

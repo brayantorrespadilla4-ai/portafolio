@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tetris</title>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/566/566312.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="game" role="application" aria-label="Tetris neon" id="game">
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="Tablero de Tetris"></canvas>
+      </div>
+
+      <div class="panel">
+        <h1>TETRIS</h1>
+        <div class="stats">
+          <div class="stat"><div id="score">0</div><small>Puntuación</small></div>
+          <div class="stat"><div id="level">1</div><small>Nivel</small></div>
+          <div class="stat"><div id="lines">0</div><small>Lineas</small></div>
+          <div class="stat"><canvas id="next" width="120" height="120" style="border-radius:8px;background:transparent"></canvas><small>Siguiente</small></div>
+        </div>
+
+        <div class="controls">
+          <button id="start">Iniciar</button>
+          <button id="pause">Pausar</button>
+          <button id="sound">🔊 Sonido</button>
+          <button id="music">🎵 Tema</button>
+          <button id="restart" class="btn-danger">Reiniciar</button>
+        </div>
+
+        <div class="touch-controls" id="touchControls">
+          <div class="touch-row">
+            <button class="touch-btn" id="leftTouch">◀</button>
+            <button class="touch-btn" id="rotateTouch">⟳</button>
+            <button class="touch-btn" id="rightTouch">▶</button>
+          </div>
+          <div class="touch-row" style="margin-top:8px">
+            <button class="touch-btn" id="downTouch">↓</button>
+            <button class="touch-btn" id="dropTouch">⇩</button>
+          </div>
+        </div>
+
+        <div class="footer">Controles: ← → mover, ↑ rotar, ↓ bajar, espacio caer directo. Presiona <strong>R</strong> para reiniciar si perdiste.</div>
+      </div>
+    </div>
+  </div>
+
+<script src="code.js"></script>
+</body>
+</html>

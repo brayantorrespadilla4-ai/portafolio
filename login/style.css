@@ -1,0 +1,136 @@
+:root {
+    --dracula-bg: #282a36;
+    --dracula-fg: #f8f8f2;
+    --dracula-selection: #44475a;
+    --dracula-comment: #6272a4;
+    --dracula-cyan: #8be9fd;
+    --dracula-green: #50fa7b;
+    --dracula-orange: #ffb86c;
+    --dracula-pink: #ff79c6;
+    --dracula-purple: #bd93f9;
+    --dracula-red: #ff5555;
+    --dracula-yellow: #f1fa8c;
+}
+
+* {
+  box-sizing: border-box; /*tamaño de la caja*/
+  margin: 0; /*margen 0*/
+  padding: 0; /*quitamos espacio de las orillas*/
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--dracula-bg);
+  color: var(--dracula-fg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+    background: var(--dracula-selection);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(189, 147, 249, 0.2), 0 0 50px rgba(255, 121, 198, 0.15);
+    border: 1px solid var(--dracula-comment);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  color: var(--dracula-purple);
+  text-shadow: 0 0 8px var(--dracula-purple), 0 0 15px var(--dracula-purple);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px 10px;
+  background: transparent;
+  border: none;
+  color: var(--dracula-fg);
+  font-size: 1rem;
+  outline: none;
+  border-bottom: 2px solid var(--dracula-comment);
+  transition: all 0.3s ease;
+}
+.input-group input:focus {
+    border-color: var(--dracula-purple);
+    box-shadow: 0 1px 0 0 var(--dracula-purple);
+}
+
+.input-group input::placeholder {
+    color: var(--dracula-comment);
+}
+
+.neon-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--dracula-purple), var(--dracula-pink));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.input-group input:focus ~ .neon-line {
+    transform: scaleX(1);
+}
+
+button {
+    width:100%;
+    padding: 15px;
+    background-color: var(--dracula-purple);
+    border: none;
+    border-radius: 5px;
+    color: var(--dracula-bg);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px var(--dracula-purple);
+}
+
+button:hover {
+    background-color: var(--dracula-pink);
+    box-shadow: 0 0 20px var(--dracula-pink);
+    transform: translateY(-3px);
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 20px;
+    color: var(--dracula-comment);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: var(--dracula-cyan);
+    text-shadow: 0 0 5px var(--dracula-cyan);
+}
